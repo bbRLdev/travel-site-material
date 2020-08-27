@@ -1,0 +1,18 @@
+<app-header (sideNavToggleTarget)="sidenav.toggle()" ></app-header>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="over" [fixedInViewport]="true" [fixedTopGap]="smallLayout ? 56 : 64" fxHide fxShow.xs fxShow.sm>
+        <mat-nav-list *ngIf="smallLayout">
+            <a mat-list-item [routerLink]="['/about']" routerLinkActive="active" (click)="sidenav.toggle()"><span>About</span><span class="spacer"></span><mat-icon>emoji_people</mat-icon></a>
+            <a mat-list-item [routerLink]="['/contact']" routerLinkActive="active" (click)="sidenav.toggle()"><span>Contact Me</span><span class="spacer"></span><mat-icon>textsms</mat-icon></a>
+            <a mat-list-item>Hi</a>
+
+            <a mat-list-item>Hi</a>
+
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content >
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+

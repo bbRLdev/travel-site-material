@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+
+        <button mat-icon-button (click)="onToggleSideNav()" fxHide fxShow.xs style="position: absolute;">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span fxHide fxShow.gt-xs>Michelle Is Cool</span>
+        <span fxHide fxShow.xs style="margin: auto;">Mobile Header</span>
+
+        <span  fxHide fxShow.gt-xs style="flex: 1 1 auto;"></span>
+        <div fxHide fxShow.gt-xs>
+            <a mat-button [routerLink]="['/about']"><span>About</span><mat-icon style="padding-left: 8px;">emoji_people</mat-icon></a>
+            <a mat-button [routerLink]="['/contact']"><span>Contact</span><mat-icon style="padding-left: 8px;">textsms</mat-icon></a>
+        </div>
+
+
+
+    </mat-toolbar-row>
+</mat-toolbar>

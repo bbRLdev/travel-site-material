@@ -1,0 +1,42 @@
+<mat-card fxLayoutAlign="center center">
+    <div *ngIf="isLoading && !doneLoading && !error">
+        <app-loading-spinner></app-loading-spinner>
+    </div>
+    <div *ngIf="!isLoading && !doneLoading && !error">
+        <form [formGroup]="contactForm" fxLayout="row wrap" (ngSubmit)="onFormSubmit()">
+            <div fxLayout="row" fxFlexFill fxLayout.lt-sm="column" fxLayoutGap="16px">
+                <mat-form-field fxFlex color="accent">
+                    <input matInput type="text" placeholder="Your first name" formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field fxFlex color="accent">
+                    <input matInput type="text" placeholder="Your last name" formControlName="lastName">
+                </mat-form-field>
+            </div>
+
+            <mat-form-field fxFlexFill color="accent">
+                <input id="email" matInput type="text" placeholder="Your email" formControlName="email">
+            </mat-form-field>
+            <mat-form-field fxFlexFill color="accent">
+                <textarea
+                    matInput
+                    [rows]="6"
+                    placeholder="Your message"
+                    formControlName="message"></textarea>
+            </mat-form-field>
+            <button fxFlexFill color="accent" mat-button type="submit" [disabled]="!contactForm.valid">Let's vacation!</button>
+        </form>
+    </div>
+    <div *ngIf="error" fxLayout="row wrap" style="text-align: center;">
+        <p fxFlexFill>{{ error }}</p>
+        <p fxFlexFill>Please visit my offical MyDreamVacations site should this occur again!</p>
+        <button mat-raised-button color="warn" fxFlexFill (click)="onClearError()">Okay</button>
+    </div>
+    <div *ngIf="doneLoading" fxLayout="row wrap">
+        <p>
+            You've taken the first steps to a great vacation!
+            I will get back to you very soon.
+        </p>
+        <button mat-button color="accent" fxFlexFill (click)="onClearSuccessMessage()">Thank you!</button>
+    </div>
+
+</mat-card>
