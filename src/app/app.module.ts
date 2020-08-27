@@ -13,6 +13,7 @@ import { ContactModule } from './contact/contact.module';
 import { AboutModule } from './about/about.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ExploreModule } from './explore/explore.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     AboutModule,
     ContactModule,
+    ExploreModule,
     AppRoutingModule,
     MaterialModule,
     SharedModule

@@ -6,10 +6,6 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { DestinationDisplayComponent } from './destination-display/destination-display.component';
 import { MapDisplayComponent } from './map-display/map-display.component';
-import { AgmCoreModule } from '@agm/core';
-import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
-
-import { environment } from 'src/environments/environment.prod';
 
 
 @NgModule({
@@ -18,10 +14,6 @@ import { environment } from 'src/environments/environment.prod';
     RouterModule.forChild([{ path: '', component: AboutComponent }]),
     SharedModule,
     MaterialModule,
-    AgmCoreModule.forRoot({
-      apiKey: environment.apiKey,
-    }),
-    AgmSnazzyInfoWindowModule,
   ]
 })
 export class AboutModule { }
