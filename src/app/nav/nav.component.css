@@ -1,8 +1,8 @@
-.mat-nav-list a.active {
-    background: #efefef;
-}
-
 .spacer {
     padding: 8px;
     flex: 1 1 auto;
+}
+
+.active {
+    color: #0097a7
 }
